@@ -4,11 +4,11 @@ MAINTAINER fredliang <info@fredliang.cn>
 
 RUN sh -c 'printf "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list' && \
     apt-get update && \
-    apt-get install -y  git &&\ 
+    apt-get install -y  git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install software-properties-common -y && \
+RUN apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:max-c-lv/shadowsocks-libev && \
     apt-get update && \
     apt install -y shadowsocks-libev
