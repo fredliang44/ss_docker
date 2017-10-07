@@ -8,7 +8,8 @@ RUN sh -c 'printf "deb http://httpredir.debian.org/debian jessie-backports main"
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y software-properties-common && \
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:max-c-lv/shadowsocks-libev && \
     apt-get update && \
     apt install -y shadowsocks-libev
