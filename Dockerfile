@@ -2,8 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER fredliang <info@fredliang.cn>
 
-RUN sh -c 'printf "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list' && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y  git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
