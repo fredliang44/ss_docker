@@ -4,6 +4,13 @@ services:
   - docker
 
 script:
-- docker build -t ss .
-- docker run -d -p 127.0.0.1:1433:1433 --name ss ss
-- docker ps | grep -q ss
+    - docker build -t ss .
+    - docker run -d -p 127.0.0.1:1433:1433 --name ss ss
+    - docker ps | grep -q ss
+
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push fredliang/ss;
+    fi
