@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 MAINTAINER fredliang <info@fredliang.cn>
 
@@ -7,8 +7,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install software-properties-common -y && \
-    apt-get update -y && \
+RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt install -y libsodium-dev && \
     pip install shadowsocks
