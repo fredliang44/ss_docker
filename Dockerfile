@@ -14,7 +14,7 @@ RUN git clone https://github.com/shadowsocks/shadowsocks-libev.git && \
     ./autogen.sh && \
     ./configure && \
     make && \
-    make install  && \
+    make install
 
 ENV SS_SERVER_ADDR ::
 ENV SS_SERVER_PORT 8388
