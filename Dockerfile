@@ -2,7 +2,8 @@ FROM ubuntu:trusty
 
 MAINTAINER fredliang <info@fredliang.cn>
 
-RUN apt-get update && \
+RUN sh -c 'printf "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list' && \
+    apt-get update && \
     apt-get install -y --force-yes -m python-pip python-m2crypto gettext build-essential autoconf libtool libpcre3-dev asciidoc xmlto libev-dev libudns-dev automake libmbedtls-dev git &&\ 
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
