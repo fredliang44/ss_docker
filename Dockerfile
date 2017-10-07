@@ -3,12 +3,14 @@ FROM ubuntu:16.04
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
-    apt-get install -y --force-yes -m python-pip python-m2crypto &&\ 
+    apt-get install -y --force-yes -m python-pip python-m2crypto && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
+RUN add-apt-repository ppa:chris-lea/libsodium;
+    echo "deb http://ppa.launchpad.net/chris-lea/libsodium/ubuntu jessie main" >> /etc/apt/sources.list;
+    echo "deb-src http://ppa.launchpad.net/chris-lea/libsodium/ubuntu jessie main" >> /etc/apt/sources.list;
+    apt-get update -y && \
     apt install -y libsodium-dev && \
     pip install shadowsocks
 
