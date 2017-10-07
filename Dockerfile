@@ -7,8 +7,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update -y
-    apt-get upgrade -y
+RUN apt-get install software-properties-common -y && \
+    apt-get update -y && \
+    apt-get upgrade -y && \
     apt install -y libsodium-dev && \
     pip install shadowsocks
 
