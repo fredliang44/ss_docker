@@ -3,9 +3,14 @@ FROM ubuntu:trusty
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
-    apt-get install -y --force-yes -m python-pip python-m2crypto &&\
+    apt-get install -y --force-yes -m python-pip python-m2crypto gettext build-essential autoconf libtool libpcre3-dev asciidoc xmlto libev-dev libudns-dev automake libmbedtls-dev git &&\ 
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/jedisct1/libsodium.git && \
+    cd libsodium/ && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install && ldconfig 
 
 RUN pip install shadowsocks
 
