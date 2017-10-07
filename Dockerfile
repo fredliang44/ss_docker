@@ -7,7 +7,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt install -y libsodium-dev && \
+RUN apt-get update -y
+    apt-get upgrade -y
+    apt install -y libsodium-dev && \
     pip install shadowsocks
 
 ENV SS_SERVER_ADDR ::
