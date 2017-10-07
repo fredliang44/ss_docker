@@ -4,4 +4,6 @@ services:
   - docker
 
 script:
-- docker build -t my-app .
+- docker build -t ss .
+- docker run -d -p 127.0.0.1:1433:1433 --name ss ss
+- docker ps | grep -q ss
