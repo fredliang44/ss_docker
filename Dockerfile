@@ -3,11 +3,6 @@ FROM ubuntu:latest
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
-    apt-get install -y  git && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:max-c-lv/shadowsocks-libev && \
     apt-get update && \
