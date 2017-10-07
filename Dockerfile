@@ -9,11 +9,13 @@ RUN sh -c 'printf "deb http://httpredir.debian.org/debian jessie-backports main"
     rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/shadowsocks/shadowsocks-libev.git && \
-    cd shadowsocks-libev/ && \
-    git submodule update --init  && \
+    cd shadowsocks-libev/ 
+
+RUN    git submodule update --init  && \
     ./autogen.sh && \
-    ./configure && \
-    make && \
+    ./configure 
+
+RUN make && \
     make install
 
 ENV SS_SERVER_ADDR ::
