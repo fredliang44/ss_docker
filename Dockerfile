@@ -10,9 +10,9 @@ RUN apt-get update && \
 RUN pip install shadowsocks
 
 ENV SS_SERVER_ADDR ::
-ENV SS_SERVER_PORT 1433
-ENV SS_PASSWORD P@ssw0rd
-ENV SS_METHOD aes-128-cfb
+ENV SS_SERVER_PORT 8388
+ENV SS_PASSWORD password
+ENV SS_METHOD aes-256-cfb
 ENV SS_TIMEOUT 300
 
 ADD start.sh /start.sh
