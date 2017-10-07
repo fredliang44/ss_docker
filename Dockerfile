@@ -8,15 +8,10 @@ RUN sh -c 'printf "deb http://httpredir.debian.org/debian jessie-backports main"
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/shadowsocks/shadowsocks-libev.git && \
-    cd shadowsocks-libev/ 
-
-RUN    git submodule update --init  && \
-    ./autogen.sh && \
-    ./configure 
-
-RUN make && \
-    make install
+RUN apt-get install software-properties-common -y && \
+    add-apt-repository -y ppa:max-c-lv/shadowsocks-libev && \
+    apt-get update && \
+    apt install --y shadowsocks-libev
 
 ENV SS_SERVER_ADDR ::
 ENV SS_SERVER_PORT 8388
