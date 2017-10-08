@@ -10,6 +10,8 @@ RUN apt-get -y dist-upgrade && \
     apt-get install -y software-properties-common && \
     apt-get update && \
     add-apt-repository ppa:chris-lea/libsodium && \
+    sudo rm -f /etc/apt/sources.list.d/chris-lea-libsodium-*.list && \
+    add-apt-repository ppa:chris-lea/libsodium && \
     apt-get update -y && \
     apt install -y libsodium-dev && \
     pip install shadowsocks
