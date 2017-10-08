@@ -4,10 +4,9 @@ MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
     apt-get install -y --force-yes -m python-pip python-m2crypto && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean 
 
-RUN apt-get install -y  python-software-properties  software-properties-common && \
+RUN apt-get install -y software-properties-common && \
     apt-get update && \
     add-apt-repository ppa:chris-lea/libsodium && \
     echo "deb http://ppa.launchpad.net/chris-lea/libsodium/ubuntu jessie main" >> /etc/apt/sources.list && \
