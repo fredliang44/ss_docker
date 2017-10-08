@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
-    apt-get install -y --force-yes -m python-pip python-m2crypto && \
+    apt-get install -y --force-yes -m python-pip python-m2crypto 
 
 RUN apt-get -y dist-upgrade && \
     apt-get -y install python-software-properties && \
