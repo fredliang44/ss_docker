@@ -1,10 +1,10 @@
 # A Dockerfile of Shadowsocks
 
-ss_libev: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_libev)
+![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_libev) ss_libev
 
-ss: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss)
+![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss) ss
 
-ss_with_aead: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_with_aead)
+![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_with_aead) ss_with_aead
 
 ## Example
 
