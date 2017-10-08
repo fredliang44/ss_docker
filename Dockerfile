@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install software-properties-common && \
+RUN apt-get install -y  python-software-properties  software-properties-common && \
     apt-get update && \
     add-apt-repository ppa:chris-lea/libsodium && \
     echo "deb http://ppa.launchpad.net/chris-lea/libsodium/ubuntu jessie main" >> /etc/apt/sources.list && \
