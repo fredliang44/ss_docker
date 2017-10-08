@@ -1,13 +1,12 @@
-FROM ubuntu:trusty
+FROM ubuntu:latest
 
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
-    apt-get install -y --force-yes -m python-pip python-m2crypto &&\
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN pip install shadowsocks
+    apt-get install -y software-properties-common && \
+    add-apt-repository -y ppa:max-c-lv/shadowsocks-libev && \
+    apt-get update && \
+    apt install -y shadowsocks-libev
 
 ENV SS_SERVER_ADDR ::
 ENV SS_SERVER_PORT 8388
