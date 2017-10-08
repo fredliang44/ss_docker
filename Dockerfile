@@ -1,18 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apt-get update && \
     apt-get install -y --force-yes -m python-pip python-m2crypto 
 
-RUN apt-get -y dist-upgrade && \
-    apt-get -y install python-software-properties && \
-    apt-get install -y software-properties-common && \
-    apt-get update && \
-    add-apt-repository ppa:chris-lea/libsodium && \
-    rm -f /etc/apt/sources.list.d/chris-lea-libsodium-*.list && \
-    add-apt-repository ppa:chris-lea/libsodium && \
-    apt-get update -y && \
+RUN apt-get update&& \
     apt install -y libsodium-dev && \
     pip install shadowsocks
 
