@@ -1,7 +1,11 @@
 # A Dockerfile of Shadowsocks
+
 ss_libev: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_libev)
+
 ss: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss)
-ss_with_aead:: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_with_aead)
+
+ss_with_aead: ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_with_aead)
+
 ## Example
 
 You can run with default conifig:
@@ -18,10 +22,10 @@ You can config your own ss server through entry point:
 
 You should replace:
 
-    **$SS_SERVER_ADDR**
-    **$SS_SERVER_PORT**
-    **$SS_PASSWORD**
-    **$SS_TIMEOUT**
+    $SS_SERVER_ADDR
+    $SS_SERVER_PORT
+    $SS_PASSWORD
+    $SS_TIMEOUT
 
 with you own config
 
