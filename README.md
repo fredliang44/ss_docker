@@ -4,17 +4,20 @@
 
 ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss) ss(master branch)
 
+
 ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_with_aead) ss_with_aead
 
 ## Example
+<<<<<<< HEAD
+=======
 
 You can run with default conifig:
 
-    docker run -p 8388:8388 fredliang/ss:ss_libev
+    docker run -p 8388:8388 fredliang/ss
 
 Equivalent to config:
 
-    docker run -p 8388:8388 fredliang/ss:ss_libev -s :: -p 8388 -k password -m aes-256-cfb -t 600
+    docker run -p 8388:8388 fredliang/ss -s :: -p 8388 -k password -m aes-256-cfb -t 600
 
 ## Run with you own config:
 
