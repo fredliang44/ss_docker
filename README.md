@@ -4,12 +4,9 @@
 
 ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss) ss(master branch)
 
-
 ![Build Status](https://travis-ci.org/fredliang44/ss_docker.svg?branch=ss_with_aead) ss_with_aead
 
 ## Example
-<<<<<<< HEAD
-=======
 
 You can run with default conifig:
 
