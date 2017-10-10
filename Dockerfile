@@ -5,8 +5,6 @@ MAINTAINER fredliang <info@fredliang.cn>
 RUN apk update && apk add py-pip
 RUN pip install shadowsocks
 
-ENTRYPOINT ["/usr/bin/ssserver"]
-
 
 ENV SS_SERVER_ADDR ::
 ENV SS_SERVER_PORT 8388
