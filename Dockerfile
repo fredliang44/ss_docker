@@ -35,8 +35,6 @@ RUN set -ex && \
     apk del .build-deps && \
     rm -rf /tmp/*
 
-USER nobody
-
 ENV SS_SERVER_ADDR ::
 ENV SS_SERVER_PORT 8388
 ENV SS_PASSWORD password
