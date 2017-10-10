@@ -1,12 +1,12 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
 MAINTAINER fredliang <info@fredliang.cn>
 
-RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    add-apt-repository -y ppa:max-c-lv/shadowsocks-libev && \
-    apt-get update && \
-    apt install -y shadowsocks-libev
+RUN apk update && apk add py-pip
+RUN pip install shadowsocks
+
+ENTRYPOINT ["/usr/bin/ssserver"]
+
 
 ENV SS_SERVER_ADDR ::
 ENV SS_SERVER_PORT 8388
