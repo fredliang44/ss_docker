@@ -1,5 +1,6 @@
 FROM alpine:latest
 
+
 MAINTAINER fredliang <info@fredliang.cn>
 
 RUN apk update && apk add py-pip
