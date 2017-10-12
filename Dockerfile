@@ -1,20 +1,16 @@
+
 FROM alpine:latest
 
-MAINTAINER fredliang <info@fredliang.cn>
+MAINTAINER admin@v2ray.com
 
-RUN apk update && apk add py-pip
-RUN pip install shadowsocks
+COPY v2ray /usr/bin/v2ray/
+COPY config.json /etc/v2ray/config.json
 
+RUN mkdir /var/log/v2ray/ \
+    && chmod +x /usr/bin/v2ray/v2ray
 
-ENV SS_SERVER_ADDR ::
-ENV SS_SERVER_PORT 8388
-ENV SS_PASSWORD password
-ENV SS_METHOD aes-256-cfb
-ENV SS_TIMEOUT 300
+ENV PATH /usr/bin/v2ray:$PATH
 
-ADD start.sh /start.sh
-RUN chmod 755 /start.sh
+EXPOSE 8888
 
-EXPOSE $SS_SERVER_PORT
-
-CMD ["sh", "-c", "/start.sh"]
+CMD ["v2ray", "-config=/etc/v2ray/config.json"]
